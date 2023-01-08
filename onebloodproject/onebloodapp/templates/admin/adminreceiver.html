@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '../static/css/main.css' %}">
+
+  <link rel="stylesheet" href="{% static '../static/css/maicons.css' %}">
+
+  <link rel="stylesheet" href="{% static '../static/css/bootstrap.css' %}">
+
+  <link rel="stylesheet" href="{% static '../static/vendor/owl-carousel/css/owl.carousel.css' %}">
+
+  <link rel="stylesheet" href="{% static '../static/vendor/animate/animate.css' %}">
+
+  <link rel="stylesheet" href="{% static '../static/css/theme.css' %}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-light">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <header>
+        <div class="topbar">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 text-lg">
+                <div class="site-info">
+                  <a href="#"><span class="mai-call text-danger"></span> +00 123 4455 6666</a>
+                  <span class="divider">|</span>
+                  <a href="#"><span class="mai-mail text-danger"></span> mail@OneBlood.com</a>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right text-sm">
+                <div class="social-mini-button">
+                  <a href="#"><span class="mai-logo-facebook-f text-danger"></span></a>
+                  <a href="#"><span class="mai-logo-twitter text-danger"></span></a>
+                  <a href="#"><span class="mai-logo-dribbble text-danger"></span></a>
+                  <a href="#"><span class="mai-logo-instagram text-danger"></span></a>
+                </div>
+              </div>
+            </div> <!-- .row -->
+          </div> <!-- .container -->
+        </div> <!-- .topbar -->
+    
+      </header>
+      <nav class="navbar navbar-expand-lg bg-danger navbar-light shadow-sm">
+        <div class="container-fluid">
+          <img src="../static/img/blood-bag.png" alt="" width="40px" height="40px" class="mr-2">
+          <a class="navbar-brand text-white" href="" style="font-family: Lucida Console;font-size: 2rem;">OneBlood</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'admindashboard' %}">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Donor
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'adminpenddonor' %}">Pending Donors</a></li>
+                  <li><a class="dropdown-item" href="{% url 'admindonor' %}">Approved Donors</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Recipients
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'adminpendreceiver' %}">Pending Recipient</a></li>
+                  <li><a class="dropdown-item" href="{% url 'adminreceiver' %}">Approved Recipient</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Notifications
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'adminpendreqblood' %}">Pending Requests</a></li>
+                  <li><a class="dropdown-item" href="{% url 'adminreqblood' %}">Approved Requests</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Blogs
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'adminblogadd' %}">Add Blogs</a></li>
+                  <li><a class="dropdown-item" href="{% url 'adminblog' %}">View Blogs</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="btn btns2 ml-2" href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- Team -->
+<section id="team" class="pb-5">
+    <div class="container">
+        <h5 class="section-title h1 text-center mt-4">Approved Recipients</h5>
+        <div class="row">
+            <!-- Team member -->
+            {% for i in receiverlist %}
+            {% if i.status == "1" %}
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="/media/{{i.receiver_img}}" alt="card image"></p>
+                                    <h4 class="card-title">{{i.fullname}}</h4>
+                                    <p class="card-text">Blood Type:{{i.blood}}</p>
+                                    <div class="row justify-content-center mb-3">
+                                        <a href="#"><i class="fa-solid fa-envelope"></i></a><span class="ml-2">{{i.email}}</span>
+                                    </div>
+                                    <div class="row justify-content-center mb-3">
+                                        <a href="#"><i class="fa-solid fa-phone"></i></a><span class="ml-2">{{i.phone}}</span>
+                                    </div>
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">{{i.fullname}}</h4>
+                                    <p>Date of Birth:{{i.dob}}</p>
+                                    <p>Gender:{{i.gender}}</p>
+                                    <p>Occupation:{{i.job}}</p>
+                                    <p>BP:{{i.bp}}</p>
+                                    <p>
+                                    {% if i.prevreceive == 'Yes' or i.prevreceive == 'yes' %}
+                                    Previously Received
+                                    {% else %}
+                                    No Receive
+                                    {% endif %}
+                                    </p>
+                                    <a href="{% url 'adminrejectreceiver' i.id %}" class="btn">Delete</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <!-- ./Team member -->
+           
+           
+
+        </div>
+    </div>
+</section>
+<!-- Team -->
+    
+    
+
+
+    
+</body>
+</html>

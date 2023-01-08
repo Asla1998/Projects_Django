@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipient Registration</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  
+    <section class="donorregform">
+
+        <div class="container-fluid">
+            
+            <div class="row d-flex">
+                <div class="col-md-5  wrap-about d-flex align-items-stretch" style="position: relative;">
+                    <div class="img" style="clip-path: polygon(59% 0, 81% 22%, 60% 42%, 79% 61%, 63% 79%, 80% 100%, 0 100%, 0% 70%, 0% 35%, 0 0);"></div>
+                </div>
+                <div class="col-md-7 py-5 pr-md-4">
+                    <a href="#" class="float">
+                        <i class="fa-lg fa-sharp fa-solid fa-house my-float"></i>
+                    </a>
+                    <div class="row">
+
+                        <div class="col-md-2">
+                            <img src="../static/img/blood-donor.png" alt="" height="90px" width="90px">
+
+                        </div>
+                        <div class="col-md-10">
+                            <h2 class="mb-4 text-uppercase" style="letter-spacing: 5px;color: rgb(236, 10, 10);;">Blood Recipient Form</h2>
+                            <p class="text-justify">Confidential - Please answer the following questions correctly. </p>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="row ml-2" style="width: 100%;height: 3px;background-color: rgb(236, 10, 10);"></div>
+                    <div class="table table-borderless">
+                        <form action="{% url 'receiverprofileupdate' receiverlist.id %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <table align="center">
+                                <tr>
+                                    <td colspan="2">FullName:</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="text" class="textfield" name="fullname" value="{{receiverlist.fullname}}"></td>
+                                </tr>
+                                <!-- <tr>
+                                    <td colspan="2">Profile Image:</td>
+                                </tr>
+                                <tr> 
+                                    <td colspan="2"><input type="file" name="donor_img" placeholder="Upload image" class="textimg" value="{{receiverlist.donor_img}}"></td>
+                                </tr> -->
+                                <tr>
+                                    <td colspan="2">Blood Type:</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="text" class="textfield" name="blood" value="{{receiverlist.blood}}"></td>
+                                </tr>
+                                <!-- <tr>
+                                    <td colspan="2">Birth Date:</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="text" class="textfield" name="dob" value="{{receiverlist.dob}}"></td>
+                                </tr> -->
+                                <tr>
+                                    <td>Gender:</td>
+                                    <td>Occupation:</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" class="textfield" name="gender" value="{{receiverlist.gender}}"></td>
+                                    <td><input type="text" class="textfield" name="job" value="{{receiverlist.job}}"></td>
+    
+                                </tr>
+                                <tr>
+                                    <td>Phone Number:</td>
+                                    <td>Email ID:</td>
+    
+                                </tr>
+                                <tr>
+                                    <td><input type="text" class="textfield" placeholder="+(01) 0000 000000" name="phone" value="{{receiverlist.phone}}"></td>
+                                    <td><input type="email" class="textfield" placeholder="example@gmail.com" name="email" value="{{receiverlist.email}}"></td>
+    
+                                </tr>
+                                <tr>
+                                    <td>Street Address Line 1:</td>
+                                    <td>Street Address Line 2</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" class="textfield" name="address1" value="{{receiverlist.address1}}"></td>
+                                    <td><input type="text" class="textfield" name="address2" value="{{receiverlist.address2}}"></td>
+    
+                                </tr>
+                                <tr>
+                                    <td>Post:</td>
+                                    <td>District:</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" class="textfield" name="post" value="{{receiverlist.post}}"></td>
+                                    <td><input type="text" class="textfield" name="district" value="{{receiverlist.district}}"></td>
+    
+                                </tr>
+                                <tr>
+                                    <td>Country:</td>
+                                    <td>Pin Code:</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" class="textfield" name="country" value="{{receiverlist.country}}"></td>
+                                    <td><input type="text" class="textfield" name="pin" value="{{receiverlist.pin}}"></td>
+    
+                                </tr>
+                                <tr>
+                                    <td>Weight:</td>
+                                    <td>BP:</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" class="textfield" name="weight" value="{{receiverlist.weight}}"></td>
+                                    <td><input type="text" class="textfield" name="bp" value="{{receiverlist.bp}}"></td>
+    
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Have you received previously? :</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="text" class="textfield" name="prevreceive" value="{{receiverlist.prevreceive}}"></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan="2" align="center"><input type="submit" class="btn btn-outline-danger" style="width: 200px; height: 50px;font-size: 1.5rem;"></td>
+                                </tr>
+                               
+                            </table>
+                            </form>
+                    </div>
+                    
+                </div>    
+            </div>
+        </div>
+
+    </section>
+    
+</body>
+</html>
